@@ -5,7 +5,8 @@ return {
   opts = {
     options = {
       opt = { -- vim.opt.<key>
-        relativenumber = false, -- sets vim.opt.relativenumber
+        relativenumber = false,
+        wrap = true,
       },
     },
     mappings = {
