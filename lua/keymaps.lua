@@ -34,7 +34,8 @@ keymap("n", "<Leader>ff", ts.find_files, { desc = "Find file" })
 keymap("n", "<Leader>fw", ts.live_grep, { desc = "Find word" })
 keymap("n", "<Leader>fb", ts.buffers, { desc = "Find buffer" })
 keymap("n", "<Leader>fh", ts.help_tags, { desc = "Find help" })
-
+keymap("n", "<Leader>fd", ts.diagnostics, { desc = "Find diagnostics" })
+keymap("n", "<Leader>fn", function () require("telescope").extensions.notify.notify() end, { desc = "Find notifications" })
 -- lazy git
 keymap("n", "<Leader>gg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
 
