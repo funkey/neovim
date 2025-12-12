@@ -230,6 +230,18 @@ require("lualine").setup({
     },
 })
 
+--- noice
+vim.pack.add({
+    { src = "https://github.com/MunifTanjim/nui.nvim" },
+})
+vim.pack.add({
+    { src = "https://github.com/rcarriga/nvim-notify" },
+})
+vim.pack.add({
+    { src = "https://github.com/folke/noice.nvim" },
+})
+require("noice").setup({})
+
 --- markdown plus
 vim.pack.add({
 	{ src = "https://github.com/YousefHadder/markdown-plus.nvim" },
