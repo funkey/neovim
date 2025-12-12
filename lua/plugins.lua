@@ -188,9 +188,10 @@ require("lualine").setup({
         },
 	},
     sections = {
-        lualine_a = {"mode"},
-        lualine_b = {
+        lualine_a = {
             { "branch", icon = icons.branch },
+        },
+        lualine_b = {
             {
                 "diff",
                 symbols = {
