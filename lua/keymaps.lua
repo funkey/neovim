@@ -62,7 +62,7 @@ keymap("n", "<Leader>fn", function () require("telescope").extensions.notify.not
 ---------------------------------
 
 keymap({"n", "v"}, "<Leader>l", "<Nop>", { desc = "Code" })
-keymap("n", "<Leader>la",  function() vim.lsp.buf.code_action() end, { desc = "LSP code action" })
+keymap("n", "<Leader>la",  "<cmd>Lspsaga code_action<CR>", { desc = "LSP code action" })
 keymap("n", "<Leader>lA",  function() vim.lsp.buf.code_action({ context = { only = { "source" }, diagnostics = {} } }) end, { desc = "LSP source action" })
 keymap("n", "<Leader>lf",  function() vim.lsp.buf.references() end, { desc = "Find references" })
 keymap("n", "<Leader>lr",  function() vim.lsp.buf.rename() end, { desc = "Rename" })

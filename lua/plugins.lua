@@ -11,6 +11,31 @@ vim.pack.add({
 })
 require("mason").setup({})
 
+--- lspsaga (prettier code actions)
+vim.pack.add({
+    { src = "https://github.com/nvimdev/lspsaga.nvim" },
+})
+require("lspsaga").setup({
+    ui = {
+        winbar_prefix = "",
+        border = "rounded",
+        devicon = true,
+        foldericon = true,
+        title = true,
+        expand = "⊞",
+        collapse = "⊟",
+        code_action = "",
+        lines = { "┗", "┣", "┃", "━", "┏" },
+        kind = nil,
+        button = { "", "" },
+        imp_sign = "󰳛 ",
+        use_nerd = true,
+    },
+    symbol_in_winbar = { enable = false },
+    lightbulb = { enable = false },
+    beacon = { enable = false },
+})
+
 --- blink.cmp
 vim.pack.add({
 	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("^1") },
@@ -241,7 +266,14 @@ vim.pack.add({
 vim.pack.add({
     { src = "https://github.com/folke/noice.nvim" },
 })
-require("noice").setup({})
+require("noice").setup({
+  lsp = {
+    cmdline = {
+      enabled = true,
+      view = "cmdline_popup",
+    },
+  },
+})
 
 --- markdown plus
 vim.pack.add({

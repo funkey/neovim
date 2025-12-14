@@ -26,6 +26,9 @@ opt.cmdheight = 0 -- Hide command line when not in use
 vim.cmd.filetype("plugin indent on") -- Enable filetype detection, plugins, and indentation
 vim.cmd.colorscheme("funkey")
 
+-- disable deprecation warnings
+vim.deprecate = function() end
+
 -- autoformat python files
 vim.api.nvim_create_autocmd(
     {"BufWritePre"},
