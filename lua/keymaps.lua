@@ -23,6 +23,10 @@ keymap("n", "<C-l>", "<C-w>l")
 keymap("n", ";;", ":%s///g<Left><Left><Left>")
 keymap("v", ";;", ":s///g<Left><Left><Left>")
 
+-- make
+keymap("n", "<F9>", "<Cmd>make<CR>")
+keymap("n", "<F10>", "<Cmd>make clean<CR>")
+
 ----------------------
 --- Go To Commands ---
 ----------------------
