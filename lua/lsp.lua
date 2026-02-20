@@ -1,6 +1,6 @@
 vim.lsp.enable({
-	"pyright",
 	"ruff",
+	"ty",
 	"lua_ls",
 	"texlab",
 })
