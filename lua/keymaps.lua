@@ -2,6 +2,7 @@ local keymap = vim.keymap.set
 
 -- set the leader to <space>
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 keymap("n", "<space>", "<Nop>")
 
 -- move between buffers

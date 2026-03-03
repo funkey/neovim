@@ -332,3 +332,23 @@ vim.pack.add({
     { src = "https://github.com/folke/lazydev.nvim" },
 })
 require("lazydev").setup({})
+
+--- vimtex
+vim.g.vimtex_view_method = "skim"
+vim.g.vimtex_view_skim_sync = 1
+vim.g.vimtex_view_skim_activate = 1
+vim.g.vimtex_compiler_method = "tectonic"
+vim.g.vimtex_compiler_tectonic = {
+  options = { '--synctex', '--keep-intermediates' }
+}
+vim.g.vimtex_quickfix_open_on_warning = 0
+vim.g.vimtex_syntax_enabled = 0
+-- to enable backwards search from Skim:
+--   * go to Settings -> Sync
+--   * PDF-TeX Sync support: "Custom"
+--   * Command  : /opt/homebrew/bin/nvim
+--                (or wherever your nvim sits)
+--   * Arguments: --headless -c "VimtexInverseSearch %line '%file'"
+vim.pack.add({
+    { src = "https://github.com/lervag/vimtex" },
+})
