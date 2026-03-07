@@ -337,9 +337,17 @@ require("lazydev").setup({})
 vim.g.vimtex_view_method = "skim"
 vim.g.vimtex_view_skim_sync = 1
 vim.g.vimtex_view_skim_activate = 1
-vim.g.vimtex_compiler_method = "tectonic"
-vim.g.vimtex_compiler_tectonic = {
-  options = { '--synctex', '--keep-intermediates' }
+vim.g.vimtex_compiler_latexmk = {
+    -- don't pollute my directory, thanks!
+    out_dir = ".latexmk",
+    continuous = 1,
+    callback = 1,
+    options = {
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-synctex=1",
+        "-file-line-error",
+    },
 }
 vim.g.vimtex_quickfix_open_on_warning = 0
 vim.g.vimtex_syntax_enabled = 0
