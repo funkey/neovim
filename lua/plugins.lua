@@ -351,6 +351,7 @@ vim.g.vimtex_compiler_latexmk = {
     callback = 1,
     options = {
         "-pdf",
+        "-shell-escape",
         "-interaction=nonstopmode",
         "-synctex=1",
         "-file-line-error",
