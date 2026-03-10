@@ -263,6 +263,14 @@ vim.pack.add({
 vim.pack.add({
     { src = "https://github.com/rcarriga/nvim-notify" },
 })
+require("notify").setup({
+    timeout = 500,  -- in ms (this is fast I don't want the clutter)
+    render = "compact",
+    stages = "static",
+    minimum_width = 50,
+    merge_duplicates = true,  -- no idea what that is, lua_ls thinks this should be here
+    top_down = false,
+})
 vim.pack.add({
     { src = "https://github.com/folke/noice.nvim" },
 })
