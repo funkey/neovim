@@ -302,13 +302,21 @@ require("which-key").setup({ icons = { group = "" } })
 
 --- treesitter
 vim.pack.add({
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version="main" },
+    {
+        src = "https://github.com/nvim-treesitter/nvim-treesitter",
+        version="main",
+    },
 })
-require("nvim-treesitter").setup({
-    ensure_installed = { "c", "lua", "markdown", "python", "latex" },
-    sync_install = true,
-    auto_install = true,
-    highlight = { enable = true },
+require("nvim-treesitter").setup({})
+require("nvim-treesitter").install({ "c", "lua", "markdown", "python", "latex" })
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "*",
+	callback = function()
+		local filetype = vim.bo.filetype
+		if filetype and filetype ~= "" then
+			pcall(vim.treesitter.start)
+		end
+	end,
 })
 
 --- telescope
