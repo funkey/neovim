@@ -287,6 +287,7 @@ require("noice").setup({
 vim.pack.add({
 	{ src = "https://github.com/YousefHadder/markdown-plus.nvim" },
 })
+require("markdown-plus").setup({})
 
 --- guess indent
 vim.pack.add({
