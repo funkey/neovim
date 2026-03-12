@@ -128,6 +128,20 @@ require("neo-tree").setup({
           align = "right",
         },
       },
+    filesystem = {
+        window = {
+            mappings = {
+                ["o"] = "system_open",
+            },
+        },
+    },
+    commands = {
+        system_open = function(state)
+            local node = state.tree:get_node()
+            local path = node:get_id()
+            vim.fn.jobstart({ "open", path }, { detach = true })
+        end
+    },
 })
 
 --- bufferline
